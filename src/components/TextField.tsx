@@ -16,6 +16,7 @@ type Props = {
   keyboardType?: "default" | "email-address" | "numeric";
   autoCapitalize?: "none" | "sentences" | "words";
   onBlur?: () => void;
+  onSubmitEditing?: () => void;
   style?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
 };
@@ -34,6 +35,7 @@ export function TextField({
   keyboardType = "default",
   autoCapitalize = "sentences",
   onBlur,
+  onSubmitEditing,
   style,
   inputStyle,
 }: Props) {
@@ -44,6 +46,9 @@ export function TextField({
         value={value}
         onChangeText={onChangeText}
         onBlur={onBlur}
+        onSubmitEditing={onSubmitEditing}
+        returnKeyType={onSubmitEditing ? "done" : undefined}
+        blurOnSubmit={!!onSubmitEditing}
         placeholder={placeholder}
         placeholderTextColor={colors.textMuted40}
         secureTextEntry={secureTextEntry}

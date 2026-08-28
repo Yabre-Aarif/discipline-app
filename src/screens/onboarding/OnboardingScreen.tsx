@@ -224,6 +224,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                 <TextField
                   value={draftDaily}
                   onChangeText={setDraftDaily}
+                  onSubmitEditing={() => addDaily(draftDaily)}
                   placeholder="Nouvel objectif quotidien…"
                   minHeight={44}
                   style={{ flex: 1 }}
@@ -322,6 +323,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                 <TextField
                   value={draftGoal}
                   onChangeText={setDraftGoal}
+                  onSubmitEditing={addGoal}
                   placeholder="Nouvel objectif 100 jours…"
                   minHeight={44}
                   style={{ flex: 1 }}
@@ -358,8 +360,9 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               <View style={styles.oathCard}>
                 <SealCheck size={28} color={colors.accent} />
                 <Text style={styles.oathText}>
-                  « {dailyCount} objectifs quotidiens, {goalCount} objectifs à 100 jours. Je ne les
-                  changerai pas avant le jour 100. »
+                  « {dailyCount} objectif{dailyCount > 1 ? "s" : ""} quotidien
+                  {dailyCount > 1 ? "s" : ""}, {goalCount} objectif{goalCount > 1 ? "s" : ""} à 100
+                  jours. Je ne les changerai pas avant le jour 100. »
                 </Text>
                 <Text style={styles.oathSub}>
                   Le rapport se ferme à minuit. Un objectif non coché est manqué et reste inscrit dans
