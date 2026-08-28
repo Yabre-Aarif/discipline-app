@@ -1,0 +1,13 @@
+{
+  "name": "discipline-functions",
+  "private": true,
+  "scripts": {
+    "test": "node __test__/run.js",
+    "dev": "node __test__/devserver.js"
+  },
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
