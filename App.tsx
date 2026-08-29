@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "@expo-google-fonts/inter/useFonts";
@@ -28,12 +28,14 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }} onLayout={onLayout}>
-      <SafeAreaProvider>
-        <AppProvider>
-          <RootNavigator />
-        </AppProvider>
-      </SafeAreaProvider>
+    <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center" }} onLayout={onLayout}>
+      <View style={{ flex: 1, width: "100%", maxWidth: Platform.OS === "web" ? 480 : undefined }}>
+        <SafeAreaProvider>
+          <AppProvider>
+            <RootNavigator />
+          </AppProvider>
+        </SafeAreaProvider>
+      </View>
     </View>
   );
 }

@@ -23,7 +23,15 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Discipline — 100 jours",
+      "shortName": "Discipline",
+      "description": "100 jours. Aucune excuse. Fixe tes objectifs, coche-les chaque soir.",
+      "lang": "fr",
+      "themeColor": "#161826",
+      "backgroundColor": "#161826",
+      "display": "standalone",
+      "orientation": "portrait"
     }
   }
 }

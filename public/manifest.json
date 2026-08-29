@@ -1,0 +1,16 @@
+{
+  "name": "Discipline — 100 jours",
+  "short_name": "Discipline",
+  "description": "100 jours. Aucune excuse. Fixe tes objectifs, coche-les chaque soir.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#161826",
+  "background_color": "#161826",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
