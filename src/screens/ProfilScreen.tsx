@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Bell, CalendarBlank } from "phosphor-react-native";
 import { useApp } from "../context/AppContext";
@@ -10,6 +10,7 @@ import { Button } from "../components/Button";
 import { TextField } from "../components/TextField";
 import { getCycleDay } from "../context/selectors";
 import { addDays, formatFrenchDate, parseDateKey } from "../utils/date";
+import { confirmAction } from "../utils/confirm";
 
 export function ProfilScreen() {
   const { state } = useApp();
@@ -22,21 +23,23 @@ export function ProfilScreen() {
   const endDate = startDate ? addDays(startDate, 99) : null;
 
   function confirmReset() {
-    Alert.alert(
-      "Recommencer un nouveau cycle ?",
-      "Tes objectifs, ton historique et ta progression seront définitivement effacés. Un nouveau cycle de 100 jours commencera à zéro.",
-      [
-        { text: "Annuler", style: "cancel" },
-        { text: "Recommencer", style: "destructive", onPress: () => sync.reset().catch(console.error) },
-      ]
-    );
+    confirmAction({
+      title: "Recommencer un nouveau cycle ?",
+      message:
+        "Tes objectifs, ton historique et ta progression seront définitivement effacés. Un nouveau cycle de 100 jours commencera à zéro.",
+      confirmLabel: "Recommencer",
+      destructive: true,
+      onConfirm: () => sync.reset().catch(console.error),
+    });
   }
 
   function confirmLogout() {
-    Alert.alert("Se déconnecter ?", "Tes données restent sauvegardées — tu pourras te reconnecter avec ton e-mail.", [
-      { text: "Annuler", style: "cancel" },
-      { text: "Se déconnecter", onPress: sync.logout },
-    ]);
+    confirmAction({
+      title: "Se déconnecter ?",
+      message: "Tes données restent sauvegardées — tu pourras te reconnecter avec ton e-mail.",
+      confirmLabel: "Se déconnecter",
+      onConfirm: sync.logout,
+    });
   }
 
   return (

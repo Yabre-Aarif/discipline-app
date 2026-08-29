@@ -20,7 +20,7 @@ export function MainTabs() {
           backgroundColor: colors.bgTabBar,
           borderTopColor: colors.divider12,
           borderTopWidth: 1,
-          height: 78,
+          height: 99,
           paddingTop: 9,
           paddingBottom: 16,
         },
@@ -30,22 +30,22 @@ export function MainTabs() {
       <Tab.Screen
         name="Rapport"
         component={HomeScreen}
-        options={{ tabBarIcon: ({ color }) => <Target size={21} color={color} /> }}
+        options={{ tabBarIcon: ({ color }) => <Target size={42} color={color} /> }}
       />
       <Tab.Screen
         name="Objectifs"
         component={GoalsScreen}
-        options={{ tabBarIcon: ({ color }) => <ListChecks size={21} color={color} /> }}
+        options={{ tabBarIcon: ({ color }) => <ListChecks size={42} color={color} /> }}
       />
       <Tab.Screen
         name="Cycle"
         component={CycleScreen}
-        options={{ tabBarIcon: ({ color }) => <ChartLineUp size={21} color={color} /> }}
+        options={{ tabBarIcon: ({ color }) => <ChartLineUp size={42} color={color} /> }}
       />
       <Tab.Screen
         name="Profil"
         component={ProfilScreen}
-        options={{ tabBarIcon: ({ color }) => <User size={21} color={color} /> }}
+        options={{ tabBarIcon: ({ color }) => <User size={42} color={color} /> }}
       />
     </Tab.Navigator>
   );
