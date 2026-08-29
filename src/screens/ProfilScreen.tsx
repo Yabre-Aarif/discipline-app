@@ -56,7 +56,7 @@ export function ProfilScreen() {
               onChangeText={(v) => sync.setUserField("name", v)}
               onBlur={() => sync.syncUserField("name", state.user.name)}
               minHeight={38}
-              fontSize={15}
+              fontSize={16}
             />
             <TextField
               label="Adresse e-mail"
@@ -66,7 +66,7 @@ export function ProfilScreen() {
               keyboardType="email-address"
               autoCapitalize="none"
               minHeight={38}
-              fontSize={13}
+              fontSize={14.5}
             />
           </View>
         </View>
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  avatarText: { fontFamily: fonts.bodyMedium, fontSize: 20, color: colors.accent300 },
+  avatarText: { fontFamily: fonts.bodyMedium, fontSize: 22, color: colors.accent300 },
   card: {
     borderWidth: 1,
     borderColor: colors.divider14,
@@ -154,9 +154,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   cardRow: { flexDirection: "row", alignItems: "center", gap: 11 },
-  cardRowLabel: { fontFamily: fonts.bodyMedium, fontSize: 14, color: colors.text },
-  cardRowSub: { fontFamily: fonts.body, fontSize: 11.5, color: colors.textMuted45, marginTop: 2 },
-  daysLeft: { fontFamily: fonts.mono, fontSize: 10.5, color: colors.accent400 },
+  cardRowLabel: { fontFamily: fonts.bodyMedium, fontSize: 15, color: colors.text },
+  cardRowSub: { fontFamily: fonts.body, fontSize: 13, color: colors.textMuted45, marginTop: 2 },
+  daysLeft: { fontFamily: fonts.mono, fontSize: 12, color: colors.accent400 },
   cardBarTrack: { height: 3, borderRadius: 2, backgroundColor: colors.divider16, marginTop: 14, overflow: "hidden" },
   cardBarFill: { height: 3, borderRadius: 2, backgroundColor: colors.accent },
   dangerCard: {
@@ -167,5 +167,5 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(224,138,138,0.06)",
     padding: 16,
   },
-  dangerText: { fontFamily: fonts.body, fontSize: 12, lineHeight: 18, color: colors.textMuted65 },
+  dangerText: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 19.5, color: colors.textMuted65 },
 });

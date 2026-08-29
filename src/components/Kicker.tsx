@@ -14,7 +14,7 @@ export function Kicker({
   return (
     <Text
       style={[
-        { fontFamily: fonts.mono, fontWeight: "600", fontSize: 10, letterSpacing: 1.6, color },
+        { fontFamily: fonts.mono, fontWeight: "600", fontSize: 11.5, letterSpacing: 1.4, color },
         style,
       ]}
     >

@@ -34,5 +34,5 @@ export function ProgressRing({ pct, size = 54, label }: { pct: number; size?: nu
 
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
-  label: { fontFamily: fonts.bodyMedium, fontSize: 13, color: colors.text },
+  label: { fontFamily: fonts.bodyMedium, fontSize: 14.5, color: colors.text },
 });

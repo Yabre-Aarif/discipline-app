@@ -28,7 +28,7 @@ export function Button({
   loading,
   dashed,
   minHeight = 44,
-  fontSize = 14,
+  fontSize = 15,
   style,
   textStyle,
   children,

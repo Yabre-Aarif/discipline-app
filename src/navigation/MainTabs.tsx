@@ -24,7 +24,7 @@ export function MainTabs() {
           paddingTop: 9,
           paddingBottom: 16,
         },
-        tabBarLabelStyle: { fontFamily: fonts.body, fontSize: 10 },
+        tabBarLabelStyle: { fontFamily: fonts.body, fontSize: 11.5 },
       }}
     >
       <Tab.Screen

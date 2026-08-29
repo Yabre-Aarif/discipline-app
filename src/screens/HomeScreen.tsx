@@ -197,7 +197,7 @@ export function HomeScreen() {
           >
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
               <Plus size={14} color={colors.textMuted65} />
-              <Text style={{ fontFamily: fonts.bodyMedium, fontSize: 12, color: colors.textMuted65 }}>
+              <Text style={{ fontFamily: fonts.bodyMedium, fontSize: 13, color: colors.textMuted65 }}>
                 OBJECTIF 100 JOURS
               </Text>
             </View>
@@ -230,15 +230,15 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.bg },
   header: { flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", paddingTop: 16, paddingHorizontal: 22, paddingBottom: 12 },
-  title: { fontFamily: fonts.bodyMedium, fontSize: 26, letterSpacing: -0.5, color: colors.text, marginTop: 5 },
+  title: { fontFamily: fonts.bodyMedium, fontSize: 28, letterSpacing: -0.5, color: colors.text, marginTop: 5 },
   ticksRow: { flexDirection: "row", gap: 3, paddingHorizontal: 22, paddingBottom: 14 },
   tick: { flex: 1, height: 5, borderRadius: 1 },
   quoteRow: { paddingHorizontal: 22, paddingBottom: 18 },
   quoteText: {
     fontFamily: fonts.body,
     fontStyle: "italic",
-    fontSize: 12.5,
-    lineHeight: 18,
+    fontSize: 13.5,
+    lineHeight: 19.5,
     color: colors.textMuted55,
   },
   scrollContent: { paddingHorizontal: 22, paddingBottom: 28 },
@@ -255,8 +255,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   tileDone: { borderColor: colors.accent, backgroundColor: colors.accentSoft15 },
-  tileLabel: { fontFamily: fonts.bodyMedium, fontSize: 15, letterSpacing: -0.2, color: colors.text },
-  tileTarget: { fontFamily: fonts.body, fontSize: 11.5, color: colors.textMuted45 },
+  tileLabel: { fontFamily: fonts.bodyMedium, fontSize: 16, letterSpacing: -0.2, color: colors.text },
+  tileTarget: { fontFamily: fonts.body, fontSize: 13, color: colors.textMuted45 },
   tileCheck: {
     position: "absolute",
     top: 13,
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
     borderStyle: "dashed",
     borderColor: colors.divider22,
   },
-  addTileLabel: { fontFamily: fonts.body, fontSize: 12, color: colors.textMuted50 },
+  addTileLabel: { fontFamily: fonts.body, fontSize: 13, color: colors.textMuted50 },
   addRow: { flexDirection: "row", gap: 8, marginTop: 12 },
   okBtn: { paddingHorizontal: 14 },
   statsCard: {
@@ -292,14 +292,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#1c1e2c",
   },
   statsHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" },
-  weekAvg: { fontFamily: fonts.bodyMedium, fontSize: 13, color: colors.accent400 },
+  weekAvg: { fontFamily: fonts.bodyMedium, fontSize: 14, color: colors.accent400 },
   weekChart: { flexDirection: "row", alignItems: "flex-end", gap: 9, height: 112, marginTop: 16 },
   weekBarCol: { flex: 1, alignItems: "center", gap: 8, height: "100%", justifyContent: "flex-end" },
   weekBar: { width: "100%", borderRadius: 5, minHeight: 4 },
-  weekBarLabel: { fontFamily: fonts.mono, fontSize: 10.5 },
+  weekBarLabel: { fontFamily: fonts.mono, fontSize: 12 },
   statsFooter: { flexDirection: "row", gap: 18, marginTop: 14, paddingTop: 14, borderTopWidth: 1, borderTopColor: colors.divider12 },
-  statValue: { fontFamily: fonts.bodyMedium, fontSize: 19, color: colors.text },
-  statLabel: { fontFamily: fonts.body, fontSize: 11, color: colors.textMuted45 },
+  statValue: { fontFamily: fonts.bodyMedium, fontSize: 21, color: colors.text },
+  statLabel: { fontFamily: fonts.body, fontSize: 12.5, color: colors.textMuted45 },
   goalsCard: {
     marginTop: 12,
     borderWidth: 1,
@@ -311,8 +311,8 @@ const styles = StyleSheet.create({
   },
   goalRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" },
   goalRowLeft: { flexDirection: "row", alignItems: "center", gap: 7 },
-  goalLabel: { fontFamily: fonts.bodyMedium, fontSize: 13.5, color: colors.text },
-  goalProgress: { fontFamily: fonts.mono, fontSize: 11, color: colors.textMuted50 },
+  goalLabel: { fontFamily: fonts.bodyMedium, fontSize: 14.5, color: colors.text },
+  goalProgress: { fontFamily: fonts.mono, fontSize: 12.5, color: colors.textMuted50 },
   goalBarTrack: { height: 4, borderRadius: 2, backgroundColor: colors.divider12, overflow: "hidden" },
   goalBarFill: { height: 4, borderRadius: 2, backgroundColor: colors.accent },
   hardBanner: {
@@ -327,5 +327,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     backgroundColor: colors.accentSoft07,
   },
-  hardBannerText: { flex: 1, fontFamily: fonts.body, fontSize: 12, lineHeight: 18, color: colors.textMuted70 },
+  hardBannerText: { flex: 1, fontFamily: fonts.body, fontSize: 13, lineHeight: 19, color: colors.textMuted70 },
 });

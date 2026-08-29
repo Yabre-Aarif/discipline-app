@@ -28,7 +28,7 @@ export function TextField({
   placeholder,
   secureTextEntry,
   minHeight = 44,
-  fontSize = 14,
+  fontSize = 15.5,
   textAlign = "left",
   transparent,
   color,
@@ -69,7 +69,7 @@ export function TextField({
 const styles = StyleSheet.create({
   label: {
     fontFamily: fonts.body,
-    fontSize: 12,
+    fontSize: 13,
     marginBottom: 5,
     color: colors.textMuted70,
   },

@@ -217,7 +217,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                         onChangeText={(v) => dispatch({ type: "RENAME_DAILY", id: d.id, label: v })}
                         transparent
                         minHeight={26}
-                        fontSize={14}
+                        fontSize={15.5}
                         style={{ flex: 1 }}
                       />
                       <TextField
@@ -225,7 +225,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                         onChangeText={(v) => dispatch({ type: "RETARGET_DAILY", id: d.id, target: v })}
                         transparent
                         minHeight={26}
-                        fontSize={12}
+                        fontSize={13.5}
                         textAlign="right"
                         color={colors.textMuted50}
                         style={{ width: 90 }}
@@ -260,7 +260,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                       key={s}
                       variant="secondary"
                       minHeight={34}
-                      fontSize={11.5}
+                      fontSize={13}
                       style={styles.chip}
                       textStyle={{ color: colors.textMuted65 }}
                       label={`+ ${s}`}
@@ -316,7 +316,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                           onChangeText={(v) => dispatch({ type: "RENAME_GOAL", id: g.id, label: v })}
                           transparent
                           minHeight={26}
-                          fontSize={14}
+                          fontSize={15.5}
                           style={{ flex: 1 }}
                         />
                         <Pressable onPress={() => dispatch({ type: "REMOVE_GOAL", id: g.id })} hitSlop={8}>
@@ -329,7 +329,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
                           value={g.target}
                           onChangeText={(v) => dispatch({ type: "RETARGET_GOAL", id: g.id, target: v })}
                           minHeight={32}
-                          fontSize={12.5}
+                          fontSize={14}
                           style={{ flex: 1 }}
                         />
                       </View>
@@ -457,10 +457,10 @@ const styles = StyleSheet.create({
   progressSeg: { height: 2, flex: 1 },
   progressSegFilled: { backgroundColor: colors.accent },
   progressSegEmpty: { backgroundColor: colors.divider16 },
-  h1: { fontFamily: fonts.bodyMedium, fontSize: 36, lineHeight: 40, letterSpacing: -0.8, color: colors.text, marginBottom: 10 },
-  h2: { fontFamily: fonts.bodyMedium, fontSize: 27, lineHeight: 31, letterSpacing: -0.5, color: colors.text, marginBottom: 8 },
-  intro: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 21, color: colors.textMuted55, marginBottom: 26, maxWidth: 290 },
-  introSmall: { fontFamily: fonts.body, fontSize: 12.5, lineHeight: 20, color: colors.textMuted55, marginBottom: 18 },
+  h1: { fontFamily: fonts.bodyMedium, fontSize: 38, lineHeight: 42, letterSpacing: -0.8, color: colors.text, marginBottom: 10 },
+  h2: { fontFamily: fonts.bodyMedium, fontSize: 29, lineHeight: 33, letterSpacing: -0.5, color: colors.text, marginBottom: 8 },
+  intro: { fontFamily: fonts.body, fontSize: 14.5, lineHeight: 22, color: colors.textMuted55, marginBottom: 26, maxWidth: 290 },
+  introSmall: { fontFamily: fonts.body, fontSize: 14, lineHeight: 21.5, color: colors.textMuted55, marginBottom: 18 },
   whyCard: {
     borderWidth: 1,
     borderColor: colors.divider14,
@@ -470,8 +470,8 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     marginTop: -8,
   },
-  whyText: { fontFamily: fonts.body, fontSize: 12, lineHeight: 18, color: colors.textMuted65 },
-  fieldLabel: { fontFamily: fonts.body, fontSize: 12, marginBottom: 5, color: colors.textMuted70 },
+  whyText: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 20, color: colors.textMuted65 },
+  fieldLabel: { fontFamily: fonts.body, fontSize: 13, marginBottom: 5, color: colors.textMuted70 },
   staticField: {
     minHeight: 44,
     justifyContent: "center",
@@ -481,7 +481,7 @@ const styles = StyleSheet.create({
     borderColor: colors.divider16,
     borderRadius: radius.md,
   },
-  staticFieldText: { fontFamily: fonts.body, fontSize: 13, color: colors.textMuted75 },
+  staticFieldText: { fontFamily: fonts.body, fontSize: 14.5, color: colors.textMuted75 },
   row: {
     flexDirection: "row",
     alignItems: "center",
@@ -503,7 +503,7 @@ const styles = StyleSheet.create({
   },
   rowTop: { flexDirection: "row", alignItems: "center", gap: 10 },
   rowTarget: { flexDirection: "row", alignItems: "center", gap: 8 },
-  targetLabel: { fontFamily: fonts.body, fontSize: 11, color: colors.textMuted45 },
+  targetLabel: { fontFamily: fonts.body, fontSize: 12.5, color: colors.textMuted45 },
   addRow: { flexDirection: "row", gap: 8, marginTop: 12 },
   addBtn: { flex: undefined, paddingHorizontal: 14 },
   chipRow: { flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 12 },
@@ -515,8 +515,8 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.surface,
   },
-  oathText: { fontFamily: fonts.bodyMedium, fontSize: 20, lineHeight: 27, letterSpacing: -0.2, color: colors.text, marginTop: 14, marginBottom: 12 },
-  oathSub: { fontFamily: fonts.body, fontSize: 12.5, lineHeight: 21, color: colors.textMuted55 },
+  oathText: { fontFamily: fonts.bodyMedium, fontSize: 22, lineHeight: 29, letterSpacing: -0.2, color: colors.text, marginTop: 14, marginBottom: 12 },
+  oathSub: { fontFamily: fonts.body, fontSize: 14, lineHeight: 22, color: colors.textMuted55 },
   swearRow: { flexDirection: "row", gap: 12, alignItems: "flex-start", marginTop: 20 },
   checkbox: {
     width: 22,
@@ -534,8 +534,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  swearText: { flex: 1, fontFamily: fonts.body, fontSize: 13, lineHeight: 19.5, color: colors.textMuted75 },
-  errorText: { fontFamily: fonts.body, fontSize: 12.5, lineHeight: 18, color: colors.danger, marginTop: 14 },
+  swearText: { flex: 1, fontFamily: fonts.body, fontSize: 14.5, lineHeight: 21, color: colors.textMuted75 },
+  errorText: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 19, color: colors.danger, marginTop: 14 },
   step5: { flex: 1, justifyContent: "center", alignItems: "flex-start", paddingVertical: 40 },
-  step5Sub: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 21, color: colors.textMuted55, maxWidth: 285, marginBottom: 24 },
+  step5Sub: { fontFamily: fonts.body, fontSize: 14.5, lineHeight: 22, color: colors.textMuted55, maxWidth: 285, marginBottom: 24 },
 });

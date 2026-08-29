@@ -82,7 +82,7 @@ export function LoginScreen({ onRequestSignup }: { onRequestSignup: () => void }
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.bg },
   scrollContent: { flexGrow: 1, padding: 24, paddingTop: 22 },
-  h1: { fontFamily: fonts.bodyMedium, fontSize: 36, lineHeight: 40, letterSpacing: -0.8, color: colors.text, marginBottom: 10 },
-  intro: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 21, color: colors.textMuted55, marginBottom: 26, maxWidth: 290 },
-  errorText: { fontFamily: fonts.body, fontSize: 12.5, lineHeight: 18, color: colors.danger, marginTop: 16 },
+  h1: { fontFamily: fonts.bodyMedium, fontSize: 38, lineHeight: 42, letterSpacing: -0.8, color: colors.text, marginBottom: 10 },
+  intro: { fontFamily: fonts.body, fontSize: 14.5, lineHeight: 22, color: colors.textMuted55, marginBottom: 26, maxWidth: 290 },
+  errorText: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 19, color: colors.danger, marginTop: 16 },
 });
