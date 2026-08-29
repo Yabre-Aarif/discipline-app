@@ -21,6 +21,22 @@ import { Kicker } from "../../components/Kicker";
 import { iconFor } from "../../utils/icons";
 import { addDays, formatFrenchDate, formatFrenchDateRange } from "../../utils/date";
 
+const WHY_COPY: Record<1 | 2 | 3 | 4, string> = {
+  1: "Une habitude ne s'installe pas en quelques jours. 100 jours te donnent la marge nécessaire pour qu'elle tienne sans dépendre de ta motivation du moment.",
+  2: "Ce n'est pas l'ampleur de l'effort qui change une vie, c'est sa fréquence. Un petit objectif tenu 100 fois pèse plus qu'un grand projet abandonné en une semaine.",
+  3: "Un objectif flou se dilue avec le temps. Une cible chiffrée te donne un repère clair pour savoir, chaque jour, si tu avances vraiment.",
+  4: "Un engagement écrit noir sur blanc est plus difficile à abandonner qu'une simple intention. Cette étape n'est pas symbolique : elle t'engage vraiment.",
+};
+
+function WhyCard({ step }: { step: 1 | 2 | 3 | 4 }) {
+  return (
+    <View style={styles.whyCard}>
+      <Kicker style={{ marginBottom: 6 }}>POURQUOI CETTE ÉTAPE</Kicker>
+      <Text style={styles.whyText}>{WHY_COPY[step]}</Text>
+    </View>
+  );
+}
+
 const DAILY_SUGGESTIONS = [
   "Prière du Fajr",
   "Sport 45 min",
@@ -131,6 +147,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               <Text style={styles.intro}>
                 Tu fixes tes objectifs. L'app ne fait que compter ce que tu as tenu.
               </Text>
+              <WhyCard step={1} />
               <View style={{ gap: 14 }}>
                 <TextField label="Nom" value={name} onChangeText={setName} placeholder="Ton nom" minHeight={44} />
                 <TextField
@@ -187,6 +204,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               <Text style={styles.introSmall}>
                 Un objectif = une action cochable le soir. Sois précis : « 20 pages », pas « lire ».
               </Text>
+              <WhyCard step={2} />
 
               <View style={{ gap: 8 }}>
                 {state.dailies.map((d) => {
@@ -284,6 +302,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               <Text style={styles.introSmall}>
                 Une cible chiffrée par objectif. Elle avance avec tes journées tenues.
               </Text>
+              <WhyCard step={3} />
 
               <View style={{ gap: 10 }}>
                 {state.goals.map((g) => {
@@ -357,6 +376,7 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               <Kicker color={colors.accent} style={{ marginBottom: 14 }}>
                 ÉTAPE 04 / SERMENT
               </Kicker>
+              <WhyCard step={4} />
               <View style={styles.oathCard}>
                 <SealCheck size={28} color={colors.accent} />
                 <Text style={styles.oathText}>
@@ -412,8 +432,9 @@ export function OnboardingScreen({ onRequestLogin }: { onRequestLogin?: () => vo
               </Kicker>
               <Text style={styles.h1}>Le cycle est{"\n"}ouvert.</Text>
               <Text style={styles.step5Sub}>
-                {dailyCount} objectifs quotidiens à cocher ce soir. {goalCount} cibles à atteindre avant
-                le {formatFrenchDate(addDays(new Date(), 99))}.
+                {dailyCount} objectif{dailyCount > 1 ? "s" : ""} quotidien{dailyCount > 1 ? "s" : ""} à
+                cocher ce soir. {goalCount} cible{goalCount > 1 ? "s" : ""} à atteindre avant le{" "}
+                {formatFrenchDate(addDays(new Date(), 99))}.
               </Text>
               <Button
                 label="OUVRIR LE RAPPORT"
@@ -440,6 +461,16 @@ const styles = StyleSheet.create({
   h2: { fontFamily: fonts.bodyMedium, fontSize: 27, lineHeight: 31, letterSpacing: -0.5, color: colors.text, marginBottom: 8 },
   intro: { fontFamily: fonts.body, fontSize: 13.5, lineHeight: 21, color: colors.textMuted55, marginBottom: 26, maxWidth: 290 },
   introSmall: { fontFamily: fonts.body, fontSize: 12.5, lineHeight: 20, color: colors.textMuted55, marginBottom: 18 },
+  whyCard: {
+    borderWidth: 1,
+    borderColor: colors.divider14,
+    borderRadius: radius.lg,
+    backgroundColor: colors.surfaceRow,
+    padding: 13,
+    marginBottom: 18,
+    marginTop: -8,
+  },
+  whyText: { fontFamily: fonts.body, fontSize: 12, lineHeight: 18, color: colors.textMuted65 },
   fieldLabel: { fontFamily: fonts.body, fontSize: 12, marginBottom: 5, color: colors.textMuted70 },
   staticField: {
     minHeight: 44,

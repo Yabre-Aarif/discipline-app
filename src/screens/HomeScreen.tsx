@@ -10,6 +10,7 @@ import { ProgressRing } from "../components/ProgressRing";
 import { Button } from "../components/Button";
 import { TextField } from "../components/TextField";
 import { iconFor } from "../utils/icons";
+import { getDailyQuote } from "../content/motivationalQuotes";
 import {
   getCycleDay,
   getCycleTicks,
@@ -39,6 +40,7 @@ export function HomeScreen() {
   const streak = getStreak(state);
   const ticks = getCycleTicks(cycleDay);
   const missCount = total - done;
+  const quote = useMemo(() => getDailyQuote(cycleDay), [cycleDay]);
 
   async function submitDaily() {
     const l = draftDaily.trim();
@@ -76,6 +78,10 @@ export function HomeScreen() {
         {ticks.map((t, i) => (
           <View key={i} style={[styles.tick, { backgroundColor: t.filled ? colors.accent : colors.divider14 }]} />
         ))}
+      </View>
+
+      <View style={styles.quoteRow}>
+        <Text style={styles.quoteText}>{quote}</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -227,6 +233,14 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.bodyMedium, fontSize: 26, letterSpacing: -0.5, color: colors.text, marginTop: 5 },
   ticksRow: { flexDirection: "row", gap: 3, paddingHorizontal: 22, paddingBottom: 14 },
   tick: { flex: 1, height: 5, borderRadius: 1 },
+  quoteRow: { paddingHorizontal: 22, paddingBottom: 18 },
+  quoteText: {
+    fontFamily: fonts.body,
+    fontStyle: "italic",
+    fontSize: 12.5,
+    lineHeight: 18,
+    color: colors.textMuted55,
+  },
   scrollContent: { paddingHorizontal: 22, paddingBottom: 28 },
   grid: { flexDirection: "row", flexWrap: "wrap", gap: 12 },
   tile: {
